@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SlashPay.Api
 {
-    abstract class Api
+    public abstract class Api
     {
         protected string PrivateKey = "";
         protected Request.RequestGateway Request = null;

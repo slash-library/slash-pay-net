@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SlashPay.Response.Component
+namespace SlashPay.Response.Checkout
 {
-    class Option
+    public class Error: ErrorResponse
     {
     }
 }

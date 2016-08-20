@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SlashPay.Api
 {
-    class RedirectApi: Api
+    public class RedirectApi : Api
     {
         const string REDIRECT_ENDPOINT = "redirect";
         const string CONFIRM_ENDPOINT = "confirm";
@@ -15,14 +15,14 @@ namespace SlashPay.Api
         { 
         }
 
-        public string Redirect(Dictionary<string, string> data)
+        public string Redirect(Request.Redirect.Redirect data)
         {
             return this.Request.Post(RedirectApi.REDIRECT_ENDPOINT, data, new Dictionary<string, string>() { 
                 { "Authorization",  "Bearer" + this.PrivateKey}
             });
         }
 
-        public string Confirm(Dictionary<string, string> data)
+        public string Confirm(Request.Redirect.Confirm data)
         {
             return this.Request.Post(RedirectApi.CONFIRM_ENDPOINT, data, new Dictionary<string, string>() { 
                 { "Authorization",  "Bearer" + this.PrivateKey}

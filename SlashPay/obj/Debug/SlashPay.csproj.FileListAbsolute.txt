@@ -1,0 +1,7 @@
+E:\Slash\slash-pay-net\SlashPay\obj\Debug\SlashPay.csprojResolveAssemblyReference.cache
+E:\Slash\slash-pay-net\SlashPay\bin\Debug\SlashPay.dll
+E:\Slash\slash-pay-net\SlashPay\bin\Debug\SlashPay.pdb
+E:\Slash\slash-pay-net\SlashPay\bin\Debug\Newtonsoft.Json.dll
+E:\Slash\slash-pay-net\SlashPay\bin\Debug\Newtonsoft.Json.xml
+E:\Slash\slash-pay-net\SlashPay\obj\Debug\SlashPay.dll
+E:\Slash\slash-pay-net\SlashPay\obj\Debug\SlashPay.pdb

@@ -1,0 +1,2 @@
+- Can one card add multiple room settings?
+- How to set card to door lock?

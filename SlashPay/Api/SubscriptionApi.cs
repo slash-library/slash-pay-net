@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SlashPay.Api
 {
-    class SubscriptionApi: Api
+    public class SubscriptionApi : Api
     {
         const string SUBSCRIBE_ENDPOINT = "subscribe";
         const string UNSUBSCRIBE_ENDPOINT = "unsubscribe";
@@ -15,14 +15,14 @@ namespace SlashPay.Api
         { 
         }
 
-        public string Subscribe(Dictionary<string, string> data)
+        public string Subscribe(Request.Subscription.Subscribe data)
         {
             return this.Request.Post(SubscriptionApi.SUBSCRIBE_ENDPOINT, data, new Dictionary<string, string>() { 
                 { "Authorization",  "Bearer" + this.PrivateKey}
             });
         }
 
-        public string Unsubscribe(Dictionary<string, string> data)
+        public string Unsubscribe(Request.Subscription.Unsubscribe data)
         {
             return this.Request.Post(SubscriptionApi.UNSUBSCRIBE_ENDPOINT, data, new Dictionary<string, string>() { 
                 { "Authorization",  "Bearer" + this.PrivateKey}

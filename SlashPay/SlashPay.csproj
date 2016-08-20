@@ -31,17 +31,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Api\Api.cs" />
+    <Compile Include="Api\CheckoutApi.cs" />
+    <Compile Include="Api\MessagingApi.cs" />
+    <Compile Include="Api\RedirectApi.cs" />
+    <Compile Include="Api\SubscriptionApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\Checkout\Charge.cs" />
+    <Compile Include="Request\Checkout\Pay.cs" />
+    <Compile Include="Request\Checkout\Token.cs" />
+    <Compile Include="Request\Components\Item.cs" />
+    <Compile Include="Request\Messaging\Send.cs" />
+    <Compile Include="Request\Redirect\Confirm.cs" />
+    <Compile Include="Request\Redirect\Redirect.cs" />
+    <Compile Include="Request\Request.cs" />
+    <Compile Include="Request\RequestGateway.cs" />
+    <Compile Include="Request\Subscription\Subscribe.cs" />
+    <Compile Include="Request\Subscription\Unsubscribe.cs" />
+    <Compile Include="Response\Checkout\Component\Option.cs" />
+    <Compile Include="Response\Checkout\Component\Result.cs" />
+    <Compile Include="Response\Checkout\Error.cs" />
+    <Compile Include="Response\Checkout\Success.cs" />
+    <Compile Include="Response\OptionResponse.cs" />
+    <Compile Include="Response\ResultResponse.cs" />
+    <Compile Include="Response\ErrorResponse.cs" />
+    <Compile Include="Response\Response.cs" />
+    <Compile Include="Response\SuccessResponse.cs" />
+    <Compile Include="SlashPay.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Response\Messaging\" />
+    <Folder Include="Response\Redirect\" />
+    <Folder Include="Response\Subscription\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

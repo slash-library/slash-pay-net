@@ -12,66 +12,64 @@ namespace SlashPay
         protected string PublicKey = "";
         protected string PrivateKey = "";
         protected Request.RequestGateway Request = null;
-        protected Api.CheckoutApi CheckoutApi = null;
-        protected Api.RedirectApi RedirectApi = null;
-        protected Api.SubscriptionApi SubscriptionApi = null;
+        protected Api.CheckoutApi checkoutApi = null;
+        protected Api.RedirectApi redirectApi = null;
+        protected Api.SubscriptionApi subscriptionApi = null;
+        protected Api.MessagingApi messagingApi = null;
 
         public SlashPay(string publicKey, string privateKey)
         {
             this.PublicKey = publicKey;
             this.PrivateKey = privateKey;
             this.Request = new Request.RequestGateway(ApiUrl + ApiVersion + '/');
-            this.CheckoutApi = new Api.CheckoutApi(this.PrivateKey, this.Request);
-            this.RedirectApi = new Api.RedirectApi(this.PrivateKey, this.Request);
-            this.SubscriptionApi = new Api.SubscriptionApi(this.PrivateKey, this.Request);
+            this.checkoutApi = new Api.CheckoutApi(this.PrivateKey, this.Request);
+            this.redirectApi = new Api.RedirectApi(this.PrivateKey, this.Request);
+            this.subscriptionApi = new Api.SubscriptionApi(this.PrivateKey, this.Request);
+            this.messagingApi = new Api.MessagingApi(this.PrivateKey, this.Request);
         }
 
-        /// Pay
-        /// API Method
+        /// Checkout API
+        /// API Class
         /// 
-        public string Pay(Dictionary<string, string> data)
+        public Api.CheckoutApi CheckoutApi
         {
-            return this.CheckoutApi.Pay(data);
+            get
+            {
+                return this.checkoutApi;
+            }
         }
 
-        /// Charge
-        /// API Method
+        /// Redirect API
+        /// API Class
         /// 
-        public string Charge(Dictionary<string, string> data)
+        public Api.RedirectApi RedirectApi
         {
-            return this.CheckoutApi.Charge(data);
+            get {
+                return this.redirectApi;
+            }
         }
 
-        /// Redirect
-        /// API Method
+        /// Subscription API
+        /// API Class
         /// 
-        public string Redirect(Dictionary<string, string> data)
+        public Api.SubscriptionApi SubscriptionApi
         {
-            return this.RedirectApi.Redirect(data);
+            get
+            {
+                return this.subscriptionApi;
+            }
         }
 
-        /// Confirm
-        /// API Method
+        /// Messaging API
+        /// API Class
         /// 
-        public string Confirm(Dictionary<string, string> data)
+        public Api.MessagingApi MessagingApi
         {
-            return this.RedirectApi.Confirm(data);
+            get
+            {
+                return this.messagingApi;
+            }
         }
 
-        /// Subscribe
-        /// API Method
-        /// 
-        public string Subscribe(Dictionary<string, string> data)
-        {
-            return this.SubscriptionApi.Subscribe(data);
-        }
-
-        /// Unsubscribe
-        /// API Method
-        /// 
-        public string Unsubscribe(Dictionary<string, string> data)
-        {
-            return this.SubscriptionApi.Unsubscribe(data);
-        }
     }
 }
